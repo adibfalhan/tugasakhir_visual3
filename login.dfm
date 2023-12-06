@@ -1,6 +1,6 @@
 object Flogin: TFlogin
-  Left = 643
-  Top = 369
+  Left = 670
+  Top = 304
   Width = 313
   Height = 364
   Caption = 'Flogin'

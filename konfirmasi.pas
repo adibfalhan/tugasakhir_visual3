@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
-  ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls;
+  ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls, frxClass,
+  frxDBSet;
 
 type
   TFkonfirmasi = class(TForm)
@@ -27,6 +28,10 @@ type
     con1: TZConnection;
     zqry1: TZQuery;
     ds1: TDataSource;
+    btn5: TButton;
+    frxKonfirmasi: TfrxReport;
+    frxdbKonfirmasi: TfrxDBDataset;
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,5 +44,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFkonfirmasi.btn5Click(Sender: TObject);
+begin
+frxKonfirmasi.ShowReport();
+end;
 
 end.

@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
-  ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls;
+  ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls, frxClass,
+  frxDBSet;
 
 type
   TFpemesanan = class(TForm)
@@ -29,6 +30,10 @@ type
     btn2: TButton;
     btn3: TButton;
     btn4: TButton;
+    frxdbPemesanan: TfrxDBDataset;
+    frxPemesanan: TfrxReport;
+    btn5: TButton;
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,5 +46,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFpemesanan.btn5Click(Sender: TObject);
+begin
+frxPemesanan.ShowReport();
+end;
 
 end.

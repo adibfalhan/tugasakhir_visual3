@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
-  ZAbstractConnection, ZConnection, StdCtrls, Grids, DBGrids;
+  ZAbstractConnection, ZConnection, StdCtrls, Grids, DBGrids, frxClass,
+  frxDBSet;
 
 type
   TFpelanggan = class(TForm)
@@ -27,6 +28,10 @@ type
     con1: TZConnection;
     zqry1: TZQuery;
     ds1: TDataSource;
+    frxdbPelanggan: TfrxDBDataset;
+    frxPelanggan: TfrxReport;
+    btn5: TButton;
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,5 +44,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFpelanggan.btn5Click(Sender: TObject);
+begin
+frxPelanggan.ShowReport();
+end;
 
 end.

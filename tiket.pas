@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
-  ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls;
+  ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls, frxClass,
+  frxDBSet;
 
 type
   TFtiket = class(TForm)
@@ -27,6 +28,10 @@ type
     btn2: TButton;
     btn3: TButton;
     btn4: TButton;
+    frxTiket: TfrxReport;
+    btn5: TButton;
+    frxdbTiket: TfrxDBDataset;
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,5 +44,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFtiket.btn5Click(Sender: TObject);
+begin
+frxTiket.ShowReport();
+end;
 
 end.
