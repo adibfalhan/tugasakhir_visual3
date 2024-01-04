@@ -37,7 +37,7 @@ uses formMenu;
 
 procedure TFlogin.btn1Click(Sender: TObject);
 begin
-if (edtUsername.Text='Admin') And (edtPassword.Text='Admin')
+if (edtUsername.Text='admin') And (edtPassword.Text='admin')
   then
   begin
     Fmenu.Show;

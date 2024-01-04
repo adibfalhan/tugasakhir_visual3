@@ -1,6 +1,6 @@
 object Fkonfirmasi: TFkonfirmasi
-  Left = 482
-  Top = 281
+  Left = 418
+  Top = 228
   Width = 890
   Height = 675
   Caption = 'Form Konfirmasi'
@@ -90,6 +90,7 @@ object Fkonfirmasi: TFkonfirmasi
     Height = 25
     Caption = 'SAVE'
     TabOrder = 5
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 232

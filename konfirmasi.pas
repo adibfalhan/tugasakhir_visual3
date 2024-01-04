@@ -32,6 +32,7 @@ type
     frxKonfirmasi: TfrxReport;
     frxdbKonfirmasi: TfrxDBDataset;
     procedure btn5Click(Sender: TObject);
+    procedure btn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,6 +49,30 @@ implementation
 procedure TFkonfirmasi.btn5Click(Sender: TObject);
 begin
 frxKonfirmasi.ShowReport();
+end;
+
+procedure TFkonfirmasi.btn1Click(Sender: TObject);
+begin
+if (edt1.Text= '')or (edt2.Text ='') or (edt3.Text= '')or (edt4.Text ='') or (edt5.Text= '')then
+begin
+ShowMessage('DATA TIDAK BOLEH KOSONG!');
+end else
+if (zqry1.Locate('no_pemesanan',edt1.Text,[])) and (zqry1.Locate('no_id',edt2.Text,[])) and (zqry1.Locate('no_tiket',edt3.Text,[])) and (zqry1.Locate('Konfirmasi',edt4.Text,[])) and (zqry1.Locate('Tgl_dimulai',edt5.Text,[])) then
+begin
+ShowMessage('DATA SUDAH DIGUNAKAN');
+
+end else
+begin
+//simpan
+zqry1.SQL.Clear;
+zqry1.SQL.Add('insert into konfirmasi values (null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'")');
+zqry1.ExecSQL;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from konfirmasi');
+zqry1.Open;
+ShowMessage('DATA BERHASIL DISIMPAN!');
+end;
 end;
 
 end.

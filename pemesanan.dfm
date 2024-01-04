@@ -117,6 +117,7 @@ object Fpemesanan: TFpemesanan
     Height = 25
     Caption = 'SAVE'
     TabOrder = 7
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 224

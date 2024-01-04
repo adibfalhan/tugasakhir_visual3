@@ -1,6 +1,6 @@
 object Fpelanggan: TFpelanggan
-  Left = 413
-  Top = 192
+  Left = 673
+  Top = 171
   Width = 889
   Height = 675
   Caption = 'Tabel Pelanggan'
@@ -103,6 +103,7 @@ object Fpelanggan: TFpelanggan
     Height = 25
     Caption = 'SAVE'
     TabOrder = 6
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 280
@@ -111,6 +112,7 @@ object Fpelanggan: TFpelanggan
     Height = 25
     Caption = 'UPDATE'
     TabOrder = 7
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 416

@@ -1,6 +1,6 @@
 object Ftiket: TFtiket
-  Left = 418
-  Top = 190
+  Left = 448
+  Top = 245
   Width = 853
   Height = 689
   Caption = 'Tabel Tiket'
@@ -103,6 +103,7 @@ object Ftiket: TFtiket
     Height = 25
     Caption = 'SAVE'
     TabOrder = 6
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 312

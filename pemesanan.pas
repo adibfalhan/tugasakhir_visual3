@@ -34,6 +34,7 @@ type
     frxPemesanan: TfrxReport;
     btn5: TButton;
     procedure btn5Click(Sender: TObject);
+    procedure btn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +51,30 @@ implementation
 procedure TFpemesanan.btn5Click(Sender: TObject);
 begin
 frxPemesanan.ShowReport();
+end;
+
+procedure TFpemesanan.btn1Click(Sender: TObject);
+begin
+if (edt1.Text= '')or (edt2.Text ='') or (edt3.Text= '')or (edt4.Text ='') or (edt5.Text= '') or (edt6.Text= '')then
+begin
+ShowMessage('DATA TIDAK BOLEH KOSONG!');
+end else
+if (zqry1.Locate('no_pemesanan',edt1.Text,[])) and (zqry1.Locate('no_tiket',edt2.Text,[])) and (zqry1.Locate('no_id',edt3.Text,[])) and (zqry1.Locate('Tgl_pemesanan',edt4.Text,[])) and (zqry1.Locate('Jumlah_pemesanan',edt5.Text,[])) and (zqry1.Locate('Total_harga',edt6.Text,[])) then
+begin
+ShowMessage('DATA SUDAH DIGUNAKAN');
+
+end else
+begin
+//simpan
+zqry1.SQL.Clear;
+zqry1.SQL.Add('insert into pemesanan values (null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'","'+edt6.Text+'")');
+zqry1.ExecSQL;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from pemesanan');
+zqry1.Open;
+ShowMessage('DATA BERHASIL DISIMPAN!');
+end;
 end;
 
 end.
